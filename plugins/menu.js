@@ -62,7 +62,7 @@ System({
             typ = cmmd.toUpperCase();
         }
         
-        menu += `\n┃  ╭─────────────┅┄▻\n┃  │  *➻ ${typ}*\n┃  ╰┬────────────┅┄▻\n┃  ┌┤`;
+        menu += `\n┃  ╭─────────────┅┄▻\n┃  │  *𑁍 ${typ}*\n┃  ╰┬────────────┅┄▻\n┃  ┌┤`;
         for (const { cmd, type } of cmnd.filter(({ type }) => type === cmmd)) {
             let ptrn;
             if (ptrnFont && ptrnFont !== '0') {
@@ -70,11 +70,11 @@ System({
             } else {
                 ptrn = cmd.charAt(0).toUpperCase() + cmd.slice(1).toLowerCase();
             }
-            menu += `\n┃  │ ‣ ${ptrn}`;
+            menu += `\n┃  │ ☆ ${ptrn}`;
         }
         menu += `\n┃  ╰─────────────···▸`;
     }
-    menu += ` ╰━━━━━━━━━━━┈⊷\nmade with 🤍`;
+    menu += ` ╰━━━━━━━━━━━┈⊷\ɴ〝 𑁍 | °° 𝛅𝛂𝛃𝛂𝛎𝛊 ￫ 𐎓 ⁹¹¹ 🌥️🐻`;
     const url = BOT_INFO.split(';')[2];
     if (isUrl(url)) await message.sendFromUrl(url, { caption: menu });
     else await message.send(menu);
