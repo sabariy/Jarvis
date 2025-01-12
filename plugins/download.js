@@ -176,14 +176,14 @@ System({
     pattern: 'twitter ?(.*)',
     fromMe: isPrivate,
     type: 'download',
-    alias: ['tw'],
+    alias: ['twdl'],
     desc: 'Download Twitter video'
 }, async (message, match, m) => {
     match = message.quoted && message.reply_message.text ? message.reply_message.text : match;
     if (!match || !match.includes('x.com')) return await message.send("_Need a x(twitter) media url_");
     const url = (await extractUrlsFromText(match))[0];
-    const { media } = await getJson(IronMan(`ironman/dl/x?url=${encodeURIComponent(url)}`));
-    await message.sendFromUrl(media[0].url);
+    const fek = await getJson(IronMan(`ironman/dl/x?url=${encodeURIComponent(url)}`));
+    await message.sendFromUrl(fek.download);
 });
 
 System({
